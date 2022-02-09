@@ -1,5 +1,6 @@
 package example.example.tests;
 
+import example.example.util.TestProperties;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,9 +17,9 @@ public class AspireLoginTest extends BaseTest {
 
 	@Test(groups = "abc")
 	public void aspireLoginTest() {
-		driver.get("https://aspireapp.odoo.com");
+		driver.get(TestProperties.getProperty("url"));
 		AspireLoginPage aspireLoginPage = PageinstancesFactory.getInstance(AspireLoginPage.class);
-		aspireLoginPage.enterEmail("user@aspireapp.com").enterPassword("@sp1r3app").clickSignIn();
+		aspireLoginPage.enterEmail(TestProperties.getProperty("username")).enterPassword(TestProperties.getProperty("password")).clickSignIn();
 		Assert.assertTrue(true, "Login Passed : Test Passed");
 	}
 }

@@ -17,7 +17,7 @@ public class TestProperties {
 	private static final Properties props = new Properties();
 
 	/**
-	 * Load all propertie.
+	 * Load all properties.
 	 */
 	public static void loadAllPropertie() {
 		try {

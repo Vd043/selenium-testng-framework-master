@@ -20,9 +20,8 @@ public class CreateProductPageTest {
 	@Test
 	public void inventoryDashboardTest() {
 		CreateProductPage createProductPage = PageinstancesFactory.getInstance(CreateProductPage.class);
-		createProductPage.navigateToProduct();
-		createProductPage.createNewProduct();
-		createProductPage.saveCreatedProduct();
+		createProductPage.productJourney();
+		createProductPage.navigateToHomeMenu();
 		Assert.assertTrue(true, "Successfully created a new product : Test Passed");
 	}
 }
