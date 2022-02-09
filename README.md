@@ -15,58 +15,12 @@ The framework uses:
 5. Log4j
 6. SimpleJavaMail
 
-Steps to create test cases:
-----
-Let's say we want to automate Google search test.  
+The project is built in such a way that you just need to execute the testng.xml file and all the test cases would be executed .
+A single browser instance has been used across the test cases .
+The requirement has been considered strictly due to which each point mentioned in the challenge has been taken as a testcase .
+Also a complimentary mail fucntionality has been added to facilitate emailaible reports . 
 
-1.Create GoogleSearchPage in **pages** package.  
-  A page class typically should contain all the elements that are present on the page and corresponding action methods.
-  
-  ```
-  public class GooglePage extends BasePage {
-	
-	@FindBy(name = "q")
-	private WebElement searchinput;
-
-	public GooglePage(WebDriver driver) {
-		super(driver);
-	}
-
-	public void searchText(String key) {
-		searchinput.sendKeys(key + Keys.ENTER);
-	}
-
-}
-```
-2.Create the test class which class the methods of GoogleSearchPage
-
-```
-@Test(testName = "Google search test", description = "Test description")
-public class GoogleSearchTest extends BaseTest {
-
-	@Test
-	public void googleSearchTest() {
-		driver.get("https://www.google.co.in/");
-		GooglePage googlePage = PageinstancesFactory.getInstance(GooglePage.class);
-		googlePage.searchText("abc");
-		Assert.assertTrue(driver.getTitle().contains("abc"), "Title doesn't contain abc : Test Failed");
-	}
-}
-```
-3.Add the test class in testng.xml file under the folder `src/test/resources/suites/`
-
-```
-<suite name="Suite">
-	<listeners></listeners>
-	<test thread-count="5" name="Test" parallel="classes">
-		<classes>
-			<class name="example.example.tests.GoogleSearchTest" />
-```
-4.Execute the test cases by maven command `mvn clean test`
-
----
-
-Reproting
+Reporting
 ---
 The framework gives report in three ways,
 
@@ -84,4 +38,3 @@ Key Points:
 
 ---
 
->For any query or suggestions please do comment or mail @ diggavibharathish@gmail.com 
