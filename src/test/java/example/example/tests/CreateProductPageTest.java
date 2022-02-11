@@ -2,7 +2,6 @@ package example.example.tests;
 
 import example.example.factory.PageinstancesFactory;
 import example.example.pages.CreateProductPage;
-import example.example.pages.InventoryDashboardPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,14 +10,14 @@ import org.testng.annotations.Test;
  *
  * @author Vardan
  */
-@Test(testName = "Inventory Dashboard Page Test", description = "Test description")
+@Test(testName = "CreateProductPageTest", description = "Test description")
 public class CreateProductPageTest {
 
 	/**
-	 * Landing on InventoryDashboardPage test.
+	 * Landing on CreateProductPageTest.
 	 */
 	@Test
-	public void inventoryDashboardTest() {
+	public void createProductTest() {
 		CreateProductPage createProductPage = PageinstancesFactory.getInstance(CreateProductPage.class);
 		createProductPage.productJourney();
 		createProductPage.navigateToHomeMenu();

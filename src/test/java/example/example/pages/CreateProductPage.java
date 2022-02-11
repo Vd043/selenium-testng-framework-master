@@ -51,6 +51,7 @@ public class CreateProductPage extends BasePage {
 	@FindBy(xpath="//nav/a[1]")
 	private WebElement homeMenu;
 
+	String editButton ="//button[@title='Edit record']";
 
 
 	public CreateProductPage(WebDriver driver) {
@@ -71,7 +72,7 @@ public class CreateProductPage extends BasePage {
 		createButton.click();
 		// "//input[@id='o_field_input_1072']"  product name xpath
 		//waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='o_field_input_1072']")));
-		driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		productName.sendKeys(TestProperties.getProperty("product.name"));
 
 	}
@@ -79,11 +80,13 @@ public class CreateProductPage extends BasePage {
 	public void saveCreatedProduct()
 	{
 		saveButton.click();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		waitByElement(driver,editButton);
+
 	}
 
 	public void updateProductQuantity()
 	{
+		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 		updateQuantityButton.click();
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		stockEmptyCreateButton.click();
