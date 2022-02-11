@@ -8,6 +8,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
 import example.example.context.Constants;
+import org.testng.annotations.AfterClass;
 
 /**
  * The Class handles the report activities.
@@ -62,4 +63,5 @@ public class ExtentReportManager {
 	public synchronized static void endCurrentTest() {
 		getExtentReports().endTest(getCurrentTest());
 	}
+
 }

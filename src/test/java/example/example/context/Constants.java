@@ -14,7 +14,7 @@ public class Constants {
 	public final static String REPORT_DIRECTORY = WORKING_DIRECTORY + "/ExtentReports/AutomationResult.html";
 
 	/** The Constant PROJECT_NAME. */
-	public final static String PROJECT_NAME = "Your_Project_Name";
+	public final static String PROJECT_NAME = "Aspire Challenge";
 
 	/** The Constant EXTENT_CONFIG_PATH. */
 	public final static String EXTENT_CONFIG_PATH = WORKING_DIRECTORY + "/src/test/resources/config/extent-config.xml";
